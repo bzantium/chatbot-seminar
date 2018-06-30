@@ -7,7 +7,7 @@ from googletrans import Translator
 app = Flask(__name__)
 
 
-@app.route("/keyboard")
+@app.route("/keyboard", methods=["GET"])
 def keyboard():
     return jsonify(type="text")
 

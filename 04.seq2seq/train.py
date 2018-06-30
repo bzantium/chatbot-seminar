@@ -6,7 +6,6 @@ from data_process import *
 
 if __name__ == "__main__":
     DIR = "models"
-    sess = tf.Session()
     data = []
     with open('./data/dialog.txt', encoding='utf-8') as f:
         for line in f:
@@ -14,6 +13,10 @@ if __name__ == "__main__":
     vocab, reverse_vocab, vocab_size = build_character(data)
     with open('vocab.json', 'w') as fp:
         json.dump(vocab, fp)
+
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    sess = tf.Session(config=config)
     model = seq2seq(sess, encoder_vocab_size=vocab_size, decoder_vocab_size=vocab_size, max_step=50)
     input, target = make_dataset(data)
     batches = batch_iter(list(zip(input, target)), batch_size=64, num_epochs=3001)

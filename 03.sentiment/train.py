@@ -32,8 +32,6 @@ if __name__ == "__main__":
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
-
-
     model = CNN(sess=sess, vocab_size=vocab_size, sequence_length=max_length, trainable=True)
     model.embedding_assign(embedding)
     batches = batch_iter(list(zip(x_input, y_input)), batch_size=64, num_epochs=5)

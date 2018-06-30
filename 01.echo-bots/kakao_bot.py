@@ -6,7 +6,7 @@ from flask import json
 app = Flask(__name__)
 
 
-@app.route("/keyboard")
+@app.route("/keyboard", methods=["GET"])
 def keyboard():
     return jsonify(type="text")
 

@@ -480,41 +480,24 @@ def sentence_to_index_morphs(lines, vocab, max_length=0):
     indexes = []
     max_len = max_length
 
-    if type(lines) is str:
-        tokens = morphs_extractor(lines)
-        for token in tokens:
-            if token in vocab.keys():
-                indexes.append(vocab[token])
-            else:
-                indexes.append(vocab['<UNK>'])
+    for line in lines:
+        token = morphs_extractor(line)
+        tokens.append(token)
 
-    else:
-        if max_len == 0:
-            for line in lines:
-                token = morphs_extractor(line)
-                tokens.append(token)
-                length = len(token)
-                if max_len < length:
-                    max_len = length
+    for token in tokens:
+        if len(token) < max_len:
+            temp = token
+            for _ in range(len(temp), max_len):
+                temp.append('<PAD>')
         else:
-            for line in lines:
-                token = morphs_extractor(line)
-                tokens.append(token)            
-        
-        for token in tokens:
-            if len(token) < max_len:
-                temp = token
-                for _ in range(len(temp), max_len):
-                    temp.append('<PAD>')
+            temp = token[:max_len]
+        index = []
+        for char in temp:
+            if char in vocab.keys():
+                index.append(vocab[char])
             else:
-                temp = token[:max_len]
-            index = []
-            for char in temp:
-                if char in vocab.keys():
-                    index.append(vocab[char])
-                else:
-                    index.append(vocab['<UNK>'])
-            indexes.append(index)
+                index.append(vocab['<UNK>'])
+        indexes.append(index)
 
     return indexes
 

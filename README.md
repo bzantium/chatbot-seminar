@@ -1,4 +1,4 @@
-# chatbot-seminar
+# Kakao-chatbot-seminar
 
 ## You can build your own kakao chatbot as following steps.
 ![Alt text](images/1.png?raw=true "Title")

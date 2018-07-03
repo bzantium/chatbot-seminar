@@ -1,3 +1,20 @@
 # chatbot-seminar
-This is the repo to make kakao chatbot.
-If you want to follow the steps, please refer to make_chatbot.pdf :)
+
+## You can build your own kakao chatbot as following steps.
+![Alt text](images/1.png?raw=true "Title")
+![Alt text](images/2.png?raw=true "Title")
+![Alt text](images/3.png?raw=true "Title")
+![Alt text](images/4.png?raw=true "Title")
+![Alt text](images/5.png?raw=true "Title")
+![Alt text](images/6.png?raw=true "Title")
+![Alt text](images/7.png?raw=true "Title")
+![Alt text](images/8.png?raw=true "Title")
+![Alt text](images/9.png?raw=true "Title")
+![Alt text](images/10.png?raw=true "Title")
+![Alt text](images/11.png?raw=true "Title")
+![Alt text](images/12.png?raw=true "Title")
+![Alt text](images/13.png?raw=true "Title")
+![Alt text](images/14.png?raw=true "Title")
+![Alt text](images/15.png?raw=true "Title")
+![Alt text](images/16.png?raw=true "Title")
+![Alt text](images/17.png?raw=true "Title")
